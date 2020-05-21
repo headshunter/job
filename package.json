@@ -1,5 +1,5 @@
 {
-  "name": "hh_mock",
+  "name": "hh",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/titovsky/hh.git"
+    "url": "git+https://github.com/headshunter/job.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/titovsky/hh/issues"
+    "url": "https://github.com/headshunter/job/issues"
   },
-  "homepage": "https://titovsky.github.io/hh_mock"
+  "homepage": "https://headshunter.github.io/job"
 }
