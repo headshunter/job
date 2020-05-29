@@ -16,6 +16,17 @@
     <meta property="og:title" content="Летняя стажировка" />
     <meta property="og:description" content="Летняя стажировка" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("user_CL5bzxLapdK1HgjV4bJsb");
+      })();
+    </script>
     <style>
       @font-face {
         font-family: ProximaNovaCond;
@@ -1272,11 +1283,24 @@
                                   <div
                                     class="vacancy-action vacancy-action_full-size"
                                   >
+                                    <script>
+                                      function hadleScrollToForm(e) {
+                                        var myform = $("form#myform");
+
+                                        var offset = myform.offset();
+
+                                        $("html, body").animate({
+                                          scrollTop: offset.top - 110,
+                                          scrollLeft: offset.left
+                                        });
+                                      }
+                                    </script>
                                     <a
                                       class="bloko-button bloko-button_secondary bloko-button_stretched"
                                       type="button"
                                       rel="nofollow"
                                       data-qa="vacancy-response-link-top"
+                                      onclick="return hadleScrollToForm(event)"
                                       >Откликнуться</a
                                     >
                                   </div>
@@ -1597,7 +1621,58 @@
                                       <div class="bloko-gap bloko-gap_top">
                                         <div
                                           class="signup-wrapper signup-wrapper_external"
+                                          style="min-width: 300px"
                                         >
+                                          <script>
+                                            function mySubmitFunction(event) {
+                                              var myform = $("form#myform");
+                                              event.preventDefault();
+
+                                              var params = myform
+                                                .serializeArray()
+                                                .reduce(function(obj, item) {
+                                                  obj[item.name] = item.value;
+                                                  return obj;
+                                                }, {});
+
+                                              // Change to your service ID, or keep using the default service
+                                              var service_id =
+                                                "default_service";
+
+                                              var template_id =
+                                                "template_QMoqaVof";
+                                              myform
+                                                .find("button")
+                                                .text("Отправляем...");
+                                              emailjs
+                                                .send(
+                                                  service_id,
+                                                  template_id,
+                                                  params
+                                                )
+                                                .then(
+                                                  function() {
+                                                    alert(
+                                                      "Успешно отправлено!"
+                                                    );
+                                                    myform
+                                                      .find("button")
+                                                      .text("Отправлено");
+                                                  },
+                                                  function(err) {
+                                                    alert(
+                                                      "Возникла ошибка\r\n Response:\n " +
+                                                        JSON.stringify(err)
+                                                    );
+                                                    myform
+                                                      .find("button")
+                                                      .text("Отправлено");
+                                                  }
+                                                );
+
+                                              return false;
+                                            }
+                                          </script>
                                           <div class="">
                                             <h2
                                               data-qa="bloko-header-2"
@@ -1605,50 +1680,21 @@
                                             >
                                               Отклик на вакансию
                                             </h2>
-                                            <div
-                                              method="POST"
-                                              data-qa="account-signup"
+                                            <form
+                                              id="myform"
+                                              onsubmit="return mySubmitFunction(event)"
                                             >
-                                              <input
-                                                type="hidden"
-                                                name="_xsrf"
-                                                value="c53610a9b3a624b295186ca447e2b5a8"
-                                              /><input
-                                                type="hidden"
-                                                name="backurl"
-                                                value="https://sochi.hh.ru/applicant/vacancy_response/after_login?vacancyId=34770498"
-                                              /><input
-                                                type="hidden"
-                                                name="vacancyId"
-                                                value="34770498"
-                                              />
                                               <div class="bloko-form-item">
                                                 <div class="bloko-form-item">
                                                   <input
                                                     type="text"
-                                                    name="firstName"
+                                                    name="name"
                                                     value=""
                                                     autocorrect="off"
                                                     autocapitalize="off"
                                                     spellcheck="false"
                                                     placeholder="Имя"
                                                     data-qa="account-signup-firstname"
-                                                    maxlength="255"
-                                                    class="bloko-input bloko-input_name"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div class="bloko-form-item">
-                                                <div class="bloko-form-item">
-                                                  <input
-                                                    type="text"
-                                                    name="lastName"
-                                                    value=""
-                                                    autocorrect="off"
-                                                    autocapitalize="off"
-                                                    spellcheck="false"
-                                                    placeholder="Фамилия"
-                                                    data-qa="account-signup-lastname"
                                                     maxlength="255"
                                                     class="bloko-input bloko-input_name"
                                                   />
@@ -1668,6 +1714,23 @@
                                                     maxlength="127"
                                                     class="bloko-input"
                                                   />
+                                                </div>
+                                              </div>
+                                              <div class="bloko-form-item">
+                                                <div class="bloko-form-item">
+                                                  <textarea
+                                                    type="text"
+                                                    name="text"
+                                                    value=""
+                                                    autocorrect="off"
+                                                    autocapitalize="off"
+                                                    spellcheck="false"
+                                                    placeholder="Ваше сообщение"
+                                                    data-qa="account-signup-text"
+                                                    maxlength="127"
+                                                    class="bloko-input"
+                                                    style="height: 80px;line-height: 14px;padding: 10px;"
+                                                  ></textarea>
                                                 </div>
                                               </div>
                                               <div class="bloko-form-item">
@@ -1695,11 +1758,7 @@
                                                   </button>
                                                 </div>
                                               </div>
-                                            </div>
-                                            <div class="account-agreement-text">
-                                              Нажимая «Продолжить», Вы
-                                              продолжаете
-                                            </div>
+                                            </form>
                                           </div>
                                         </div>
                                       </div>
