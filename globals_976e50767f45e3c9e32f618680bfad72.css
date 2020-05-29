@@ -12913,10 +12913,10 @@ small {
   border: 1px solid #fff;
 }
 .supernova-app-button_android {
-  background: url(../blocks/supernova/images/google-play__min_.svg);
+  background: url(./google-play__min_.svg);
 }
 .supernova-app-button_ios {
-  background: url(../blocks/supernova/images/app-store__min_.svg);
+  background: url(./app-store__min_.svg);
 }
 .supernova-button-wrapper {
   border-radius: 19px;
@@ -14147,7 +14147,7 @@ small {
 .supernova-footer-nav-logo {
   width: 50px;
   height: 50px;
-  background: url(../../../logos/svg/hh.ru-gray__min_.svg) 0 0 no-repeat;
+  background: url(./hh.ru-gray__min_.svg) 0 0 no-repeat;
 }
 @media (max-width: 699px) {
   .xs-friendly .supernova-footer-nav-logo {
@@ -14198,7 +14198,7 @@ small {
   background-repeat: no-repeat;
 }
 .supernova-footer-menu-item-icon_lang-en {
-  background-image: url(../blocks/supernova/images/lang-en__min_.svg);
+  background-image: url(./lang-en__min_.svg);
 }
 .supernova-footer-menu-item-icon_lang-ru {
   background-image: url(../blocks/supernova/images/lang-ru__min_.svg);
@@ -14216,7 +14216,7 @@ small {
   background-image: url(../blocks/supernova/images/lang-az__min_.svg);
 }
 .supernova-footer-menu-item-icon_employer {
-  background-image: url(../blocks/supernova/images/people__min_.svg);
+  background-image: url(./people__min_.svg);
 }
 .supernova-footer-menu-additional {
   margin-bottom: 15px;
@@ -14276,22 +14276,22 @@ small {
   background-position: -37px 0;
 }
 .supernova-footer-social-link-icon_vk {
-  background-image: url(../blocks/supernova/images/vk__min_.svg);
+  background-image: url(./vk__min_.svg);
 }
 .supernova-footer-social-link-icon_fb {
-  background-image: url(../blocks/supernova/images/fb__min_.svg);
+  background-image: url(./fb__min_.svg);
 }
 .supernova-footer-social-link-icon_ok {
-  background-image: url(../blocks/supernova/images/ok__min_.svg);
+  background-image: url(./ok__min_.svg);
 }
 .supernova-footer-social-link-icon_twitter {
-  background-image: url(../blocks/supernova/images/tw__min_.svg);
+  background-image: url(./tw__min_.svg);
 }
 .supernova-footer-social-link-icon_instagram {
-  background-image: url(../blocks/supernova/images/ig__min_.svg);
+  background-image: url(./ig__min_.svg);
 }
 .supernova-footer-social-link-icon_telegram {
-  background-image: url(../blocks/supernova/images/tg__min_.svg?v=15102019);
+  background-image: url(./tg__min_.svg);
 }
 .supernova-icon-dynamic {
   flex-shrink: 0;
@@ -20971,4 +20971,3 @@ body:not(.xs-friendly) .vacancy-contacts__phone-link {
 .address-title {
   font-size: 13.4px;
 }
-/*# sourceMappingURL=__globals_976e50767f45e3c9e32f618680bfad72.css.map */
